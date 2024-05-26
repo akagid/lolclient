@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - .:/app
+      - node_modules:/app/my-app/node_modules
+
+volumes:
+  node_modules:
